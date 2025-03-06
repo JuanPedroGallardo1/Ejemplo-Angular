@@ -1,4 +1,6 @@
 const axios = require("axios");
+const express = require('express');
+const app = express();
 
 async function obtenerDatos() {
   try {
@@ -12,3 +14,14 @@ async function obtenerDatos() {
 }
 
 obtenerDatos();
+
+
+
+app.get('/', (req, res) => {
+  res.send('¡Hola, mundo!');
+});
+
+app.listen(3000, () => {
+  console.log('Servidor corriendo en http://localhost:3000');
+});
+
